@@ -4,8 +4,8 @@ from twilio.rest import Client
 
 STOCK_NAME = "TSLA"
 COMPANY_NAME = "Tesla"
-TWILIO_SID = "ACf25583d327507bf47a898f8f3783d3e0"
-TWILIO_AUTH_TOKEN = "d1c4ed9006f2d65bf74bf6f1f6dcc36c"
+TWILIO_SID = ""
+TWILIO_AUTH_TOKEN = ""
 
 response_stock_name = requests.get(url=f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol={STOCK_NAME}&interval=15min&apikey=N0X23PUZ71KKYKS2')
 response_stock_name.raise_for_status()
@@ -49,7 +49,7 @@ if abs(percentage_difference) > 5:
             .create(
             body=news,
             from_='+18885966435',
-            to='+16462406720'
+            to=''
         )
     print(message.status)
 
